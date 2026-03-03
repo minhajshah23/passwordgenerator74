@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #2563eb);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 20px;
+    width: 380px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.output {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#generateBtn {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #0ea5e9, #2563eb);
+    color: white;
+}
+
+#generateBtn:hover {
+    transform: scale(1.05);
+}
+
+#copyBtn {
+    background: #22c55e;
+    color: white;
+}
+
+#copyBtn:hover {
+    transform: scale(1.05);
+}
+
+.strength {
+    height: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: 0.4s ease;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 14px;
+    height: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input.error-input {
+    border: 2px solid #ef4444;
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
